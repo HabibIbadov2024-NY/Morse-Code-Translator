@@ -50,7 +50,7 @@ public class TranslatorMorse {
 
         for (String morseChar : morseChars) {
             String translatedChar = toText.get(morseChar);
-            textCode += (translatedChar != null ? translatedChar : "?") + " ";
+            textCode += (translatedChar != null ? translatedChar : "?");
         }
         return textCode.trim();
     }
