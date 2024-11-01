@@ -44,20 +44,14 @@ public class TranslatorMorse {
         toText.put("/", " ");
     }
 
-    public String toTextMachen(String morse){
-        String textCode = "";
+    public String toNormalTextTranslate(String morse) {
+        String textCode = " ";
+        String[] morseChars = morse.split(" ");  // Split Morse code by spaces into Morse characters
 
-        for (int j=0; j<morse.length(); j++){
-            char c = morse.charAt(j);
-            String morseChar = toText.get(String.valueOf(c));
-            textCode +=  (morseChar != null ? morseChar : "?") + " ";
-
+        for (String morseChar : morseChars) {
+            String translatedChar = toText.get(morseChar);
+            textCode += (translatedChar != null ? translatedChar : "?") + " ";
         }
-
         return textCode.trim();
     }
 }
-
-
-
-
